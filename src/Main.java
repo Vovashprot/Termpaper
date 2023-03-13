@@ -17,17 +17,37 @@ public class Main {
             System.out.println("Сумма зарплат = " + sum);
         }
      Employee findMinSalary() {
-        int min = Integer.MAX_VALUE;
-        int employeeWithMinimalSalary = 0;
-        for (int i = 0; i < employees.length; i ++){
-            if (employees[i]!= null && employees[i].getSalary() < min){
-                min = employees[i].getSalary();
-                employeeWithMinimalSalary = employees[i].getId();
+        Employee min = null;
+        for (Employee employee : employees){
+            if (min == null || employee.getSalary() < min.getSalary()){
+                min = employee;
             }
         }
-        System.out.println("Минимальная зарплата составляет " + min +
-                ", ее получает сотрудник" + employeeWithMinimalSalary);
-        System.out.println();
-     return null;
+     return min;
     }
+    Employee findMaxSalary() {
+        Employee max = null;
+        for (Employee employee : employees) {
+            if (max == null || employee.getSalary() > max.getSalary()) {
+                max = employee;
+            }
+        }
+        return max;
+    }
+
+    double findAverageSalary() {
+        int sum = 0;
+        for (Employee employee : employees) {
+                sum += employee.getSalary();
+        }
+        double average = (double) sum / employees.length;
+        return average;
+    }
+    void  printFullNameOfEmployee(){
+        for (Employee employee: employees){
+            System.out.println(employee.getFullName());
+        }
+    }
+
+
 }
