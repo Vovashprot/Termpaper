@@ -16,23 +16,23 @@ public class Employee {
         return idGenerator;
     }
 
-    public String getFullName() {
+    public static String getFullName() {
         return fullName;
     }
 
-    public int getDepartment() {
+    public static int getDepartment() {
         return department;
     }
 
-    public int getSalary() {
+    public static int getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public static void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void setDepartment(int department) {
+    public static void setDepartment(int department) {
         this.department = department;
     }
 
